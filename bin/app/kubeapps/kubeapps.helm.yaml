@@ -1,0 +1,6 @@
+frontend:
+  replicaCount: 1
+dashboard:
+  replicaCount: 1
+kubeappsapis:
+  replicaCount: 1

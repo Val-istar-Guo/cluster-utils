@@ -1,0 +1,85 @@
+# 名称过长无法创建PVC
+# https://github.com/prometheus-community/helm-charts/issues/1033
+nameOverride: kps
+fullnameOverride: kps
+namespaceOverride: monitoring
+
+alertmanager:
+  enabled: true
+  alertmanagerSpec:
+    image:
+      registry: docker.io
+      repository: bitnami/alertmanager
+      tag: 0.25.0-debian-11-r23
+      portName: "9093"
+    # storage:
+    #   volumeClaimTemplate:
+    #     spec:
+    #       storageClassName: jiva-sc
+    #       accessModes: ["ReadWriteOnce"]
+    #       resources:
+    #         requests:
+    #           storage: 5Gi
+
+grafana:
+  enabled: true
+  defaultDashboardsTimezone: utc
+  adminPassword: admin
+
+prometheusOperator:
+  enabled: true
+
+  tls:
+    enabled: false
+
+  image:
+    registry: docker.io
+    repository: bitnami/prometheus-operator
+    tag: 0.63.0-debian-11-r5
+
+  prometheusDefaultBaseImageRegistry: docker.io
+  prometheusDefaultBaseImage: bitnami/prometheus
+
+  alertmanagerDefaultBaseImageRegistry: docker.io
+  alertmanagerDefaultBaseImage: bitnami/alertmanager
+
+  prometheusConfigReloader:
+    image:
+      registry: quay.mirrors.ustc.edu.cn
+      repository: prometheus-operator/prometheus-config-reloader
+
+  thanosImage:
+    registry: docker.io
+    repository: bitnami/thanos
+
+  admissionWebhooks:
+    patch:
+      image:
+        registry: docker.io
+        repository: dyrnq/kube-webhook-certgen
+
+prometheus:
+  enabled: true
+  prometheusSpec:
+    image:
+      registry: docker.io
+      repository: bitnami/prometheus
+      tag: 2.42.0-debian-11-r7
+    retention: 10d
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: jiva-sc
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 5Gi
+
+prometheus-node-exporter:
+  namespaceOverride: monitoring
+
+kube-state-metrics:
+  image:
+    registry: docker.io
+    repository: bitnami/kube-state-metrics
+    tag: 2.8.1-debian-11-r1

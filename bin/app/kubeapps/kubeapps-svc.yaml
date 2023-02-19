@@ -1,0 +1,23 @@
+# 给kubeapps启动一个临时的访问入口
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubeapps-public
+  namespace: kubeapps
+spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+    nodePort: 30090
+  selector:
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: kubeapps
+    app.kubernetes.io/name: kubeapps
+  sessionAffinity: None
+  type: NodePort

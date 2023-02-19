@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test.openebs
+  namespace: default
+spec:
+  containers:
+    - command:
+        - sh
+        - -c
+        - "date >> /mnt/openebs-csi/date.txt; hostname >> /mnt/openebs-csi/hostname.txt; sync; sleep 5; sync; tail -f /dev/null;"
+      image: busybox
+      name: test-openebs-container
+      volumeMounts:
+        - mountPath: /mnt/openebs-csi
+          name: test-openebs-vol
+  volumes:
+    - name: test-openebs-vol
+      persistentVolumeClaim:
+        claimName: test.openebs.pvc

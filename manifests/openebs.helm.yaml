@@ -1,0 +1,35 @@
+cstor:
+  enabled: true
+  csiController:
+    resizer:
+      image:
+        registry: docker.io/
+        repository: longhornio/csi-resizer
+    snapshotter:
+      image:
+        registry: docker.io/
+        repository: longhornio/csi-snapshotter
+    snapshotController:
+      image:
+        registry: docker.io/
+        repository: dyrnq/snapshot-controller
+    attacher:
+      image:
+        registry: docker.io/
+        repository: longhornio/csi-attacher
+        tag: v3.4.0
+    provisioner:
+      image:
+        registry: docker.io/
+        repository: objectscale/csi-provisioner
+
+  csiNode:
+    driverRegistrar:
+      image:
+        registry: docker.io/
+        repository: longhornio/csi-node-driver-registrar
+  openebsNDM:
+    enabled: false
+
+openebs-ndm:
+  enabled: true

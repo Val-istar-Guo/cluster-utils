@@ -1,0 +1,31 @@
+pilot:
+  autoscaleEnabled: false
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+
+sidecarInjectorWebhook:
+  enableNamespacesByDefault: false
+  rewriteAppHTTPProbe: true
+
+telemetry:
+  enabled: true
+  v2:
+    prometheus:
+      enabled: false
+
+meshConfig:
+  ingressService: istio-ingress
+  ingressSelector: ingress
+
+global:
+  proxy:
+    # Resources for the sidecar.
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi

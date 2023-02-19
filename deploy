@@ -1,0 +1,21 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source ${DIR}/exports.sh
+source ${DIR}/function.sh
+
+set -e
+
+SCRIPT=$1
+shift
+
+export MANIFESTS_DIR=${DIR}/manifests
+export SCRIPT_DIR=${DIR}/scripts/deploy
+
+case $SCRIPT in
+cert-manager) ${SCRIPT_DIR}/cert-manager.sh $@ ;;
+istio) ${SCRIPT_DIR}/istio.sh $@ ;;
+kubeapps) ${SCRIPT_DIR}/kubeapps.sh $@ ;;
+openebs) ${SCRIPT_DIR}/openebs.sh $@ ;;
+kube-flannel) ${SCRIPT_DIR}/kube-flannel.sh $@ ;;
+*) throw "unknow script" ;;
+esac

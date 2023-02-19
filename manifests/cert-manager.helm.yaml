@@ -1,0 +1,25 @@
+installCRDs: true
+
+replicaCount: 1
+
+image:
+  repository: quay.mirrors.ustc.edu.cn/jetstack/cert-manager-controller
+
+prometheus:
+  enabled: false
+
+webhook:
+  image:
+    repository: quay.mirrors.ustc.edu.cn/jetstack/cert-manager-webhook
+
+cainjector:
+  image:
+    repository: quay.mirrors.ustc.edu.cn/jetstack/cert-manager-cainjector
+
+acmesolver:
+  image:
+    repository: quay.mirrors.ustc.edu.cn/jetstack/cert-manager-acmesolver
+
+startupapicheck:
+  image:
+    repository: quay.mirrors.ustc.edu.cn/jetstack/cert-manager-ctl

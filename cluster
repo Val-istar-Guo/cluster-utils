@@ -1,0 +1,17 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source ${DIR}/exports.sh
+source ${DIR}/function.sh
+
+set -e
+
+SCRIPT=$1
+shift
+
+case $SCRIPT in
+init) ${DIR}/scripts/cluster/init.sh $@ ;;
+reset) ${DIR}/scripts/cluster/reset.sh $@ ;;
+debug) ${DIR}/scripts/cluster/debug.sh $@ ;;
+token) ${DIR}/scripts/cluster/token.sh $@ ;;
+*) throw "unknow script" ;;
+esac

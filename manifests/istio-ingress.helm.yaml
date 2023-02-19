@@ -1,0 +1,20 @@
+kind: DaemonSet
+
+service:
+  type: ClusterIP
+  externalIPs:
+    - ${案例云内网IP地址}
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 400m
+    memory: 256Mi
+
+autoscaling:
+  enabled: false
+
+nodeSelector:
+  node-role.kubernetes.io/gateway: val-istar-guo.com

@@ -23,7 +23,7 @@ alertmanager:
 
 grafana:
   enabled: true
-  defaultDashboardsTimezone: utc
+  defaultDashboardsTimezone: browser
   adminPassword: admin
 
 prometheusOperator:

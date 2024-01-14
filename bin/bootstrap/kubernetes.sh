@@ -69,7 +69,7 @@ EOF
 # 安装
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl
-apt-get install -y kubelet=1.26.9.00 kubeadm=1.26.9-00 kubectl=1.26.9-00
+apt-get install -y kubelet=1.26.9-00 kubeadm=1.26.9-00 kubectl=1.26.9-00
 apt-mark hold kubelet kubeadm kubectl
 
 systemctl enable --now kubelet

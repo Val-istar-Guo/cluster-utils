@@ -30,7 +30,7 @@ apt install -y git
 #################################
 # 克隆 cluster-utils
 #################################
-# REPO=https://ghproxy.com/https://github.com/Val-istar-Guo/cluster-utils
+# REPO=https://mirror.ghproxy.com/https://github.com/Val-istar-Guo/cluster-utils
 REPO=https://github.com/Val-istar-Guo/cluster-utils.git
 DIR=$HOME/cluster-utils
 

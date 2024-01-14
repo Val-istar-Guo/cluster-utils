@@ -5,7 +5,7 @@ set -e
 
 log "开始安装 helm ..."
 # REPO="https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3"
-# REPO="https://ghproxy.com/raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3"
+# REPO="https://mirror.ghproxy.com/raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3"
 # curl ${REPO} | bash
 
 REPO="https://miaooo-users-service.oss-cn-shanghai.aliyuncs.com/helm-v3.11.0-linux-amd64.tar.gz"

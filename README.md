@@ -13,7 +13,7 @@
 
 ```bash
 # 通过ghproxy代理安装
-bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/Val-istar-Guo/cluster-utils/master/install.sh)" && source /etc/profile
+bash -c "$(curl -fsSL https://mirror.ghproxy.com/https://raw.githubusercontent.com/Val-istar-Guo/cluster-utils/master/install.sh)" && source /etc/profile
 # 直接从github安装
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Val-istar-Guo/cluster-utils/master/install.sh)" && source /etc/profile
 ```

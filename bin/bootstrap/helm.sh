@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-[ -x "$(command -v helm)" ] && log "Helm($(helm -v)) 已安装" && exit 0
+[ -x "$(command -v helm)" ] && log "Helm($(helm version --short)) 已安装" && exit 0
 
 log "开始安装 helm ..."
 # REPO="https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3"

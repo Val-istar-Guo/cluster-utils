@@ -6,7 +6,7 @@ set -e
 #################################
 
 # 检查是否已经安装
-isActiveService containerd && log "containerd 已安装" && exit 0
+isServiceActive containerd && log "containerd 已安装" && exit 0
 log "安装 containerd..."
 
 # 参数检查

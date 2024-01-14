@@ -56,7 +56,7 @@ ntpdate time.windows.com
 # 安装kubernetes
 #################################
 # 检查是否已经安装
-isActiveService kubelet && log "kubernetes 已安装" && exit
+isServiceActive kubelet && log "kubernetes 已安装" && exit
 log '安装 kubernetes...'
 
 # 设置清华源

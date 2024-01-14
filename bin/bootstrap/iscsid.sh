@@ -4,7 +4,7 @@
 # 用于操作磁盘设备
 #################################
 set -e
-isActiveService iscsid && log 'iscsid 已安装' && exit
+isServiceActive iscsid && log 'iscsid 已安装' && exit
 log '安装 iscsid'
 
 apt install -y open-iscsi

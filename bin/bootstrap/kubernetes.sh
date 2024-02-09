@@ -34,16 +34,18 @@ swapoff -a
 # 创建一个虚拟网卡
 # 由于阿里云/腾讯云的服务器并没有绑定公网IP的网卡
 #################################
-log '创建公网IP的虚拟网卡...'
+if ! ip addr | grep -wq ${PUBLIC_IP}; then
+  log '创建公网IP的虚拟网卡...'
 
-cat >/etc/network/interfaces.d/ifcfg-eth0:1 <<EOF
+  cat >/etc/network/interfaces.d/ifcfg-eth0:1 <<EOF
 auto eth0:1
 iface eth0:1 inet static
 address ${PUBLIC_IP}
 netmask 255.255.255.0
 EOF
 
-systemctl restart networking
+  systemctl restart networking
+fi
 
 #################################
 # 同步时钟时间
@@ -69,7 +71,7 @@ EOF
 # 安装
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl
-apt-get install -y kubelet=1.26.9-00 kubeadm=1.26.9-00 kubectl=1.26.9-00
+apt-get install -y kubelet=1.28.2-00 kubeadm=1.28.2-00 kubectl=1.28.2-00
 apt-mark hold kubelet kubeadm kubectl
 
 systemctl enable --now kubelet

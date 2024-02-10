@@ -18,6 +18,9 @@ bash -c "$(curl -fsSL https://mirror.ghproxy.com/https://raw.githubusercontent.c
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Val-istar-Guo/cluster-utils/master/install.sh)" && source /etc/profile
 ```
 
+> 当提示输入公网 IP 时，需要的 IP 地址是主机能与其他主机相互通信的 IP 地址，并非一定要公网 IP。
+> 如果你使用 wireguard 创建了虚拟局域网，使用虚拟局域网的 IP 更好。
+
 ### 启动 Kubernetes
 
 cluster 工具包提供如下功能初始化集群：

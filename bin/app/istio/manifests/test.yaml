@@ -39,7 +39,6 @@ spec:
       targetPort: 80
   selector:
     app: nginx-app
-
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
@@ -56,18 +55,6 @@ spec:
         protocol: HTTP
       hosts:
         - test.val-istar-guo.com
-      tls:
-        httpsRedirect: true
-    - port:
-        number: 443
-        name: https
-        protocol: HTTPS
-      tls:
-        mode: SIMPLE
-        credentialName: test.nginx.tls
-      hosts:
-        - test.val-istar-guo.com
-
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -88,16 +75,3 @@ spec:
             host: nginx-svc
             port:
               number: 8088
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: test.nginx
-  namespace: istio-ingress
-spec:
-  dnsNames:
-    - test.val-istar-guo.com
-  secretName: test.nginx.tls
-  issuerRef:
-    name: letsencrypt
-    kind: ClusterIssuer

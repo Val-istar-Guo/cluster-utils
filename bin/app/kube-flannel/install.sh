@@ -12,7 +12,7 @@ wget -O $FILE $REPO
 
 sed -i \
   -e '/--ip-masq/i\        - --public-ip=$(PUBLIC_IP)' \
-  -e "/--ip-masq/i\        - --iface=eth0" \
+  -e "/--ip-masq/i\        - --iface=wg0" \
   -e "/- name: POD_NAME$/i\\
         - name: PUBLIC_IP\\
           valueFrom:\\

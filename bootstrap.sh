@@ -30,4 +30,5 @@ cd - >>/dev/null
 # 重启系统后生效
 #################################
 echo 'GRUB_CMDLINE_LINUX="cgroup_enable=cpu"' >>/etc/default/grub
+log "系统重启"
 reboot

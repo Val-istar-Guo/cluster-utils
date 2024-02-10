@@ -80,6 +80,11 @@ autoscaling:
 
 nodeSelector:
   node-role.kubernetes.io/gateway:
+
+tolerations:
+  - key: "node.buka.team/dedicated"
+    operator: "Equal"
+    value: "gateway"
 EOF
 
   helm install istio-ingress istio/gateway \

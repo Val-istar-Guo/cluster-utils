@@ -21,7 +21,7 @@ meshConfig:
 
 global:
   proxy:
-    image: docker.mirrors.sjtug.sjtu.edu.cn/proxyv2
+    image: docker.mirrors.sjtug.sjtu.edu.cn/istio/proxyv2:1.20.3
     # Resources for the sidecar.
     resources:
       requests:
@@ -31,4 +31,4 @@ global:
         cpu: 200m
         memory: 256Mi
   proxy_init:
-    image: docker.mirrors.sjtug.sjtu.edu.cn/proxyv2
+    image: docker.mirrors.sjtug.sjtu.edu.cn/istio/proxyv2:1.20.3

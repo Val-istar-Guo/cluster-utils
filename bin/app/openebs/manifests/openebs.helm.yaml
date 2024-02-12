@@ -51,17 +51,17 @@ jiva:
   jivaOperator:
     controller:
       image:
-        registry: "docker.mirrors.sjtug.sjtu.edu.cn"
+        registry: "docker.mirrors.sjtug.sjtu.edu.cn/"
         repository: openebs/jiva
     replica:
       image:
-        registry: "docker.mirrors.sjtug.sjtu.edu.cn"
+        registry: "docker.mirrors.sjtug.sjtu.edu.cn/"
         repository: openebs/jiva
     image:
-      registry: "docker.mirrors.sjtug.sjtu.edu.cn"
+      registry: "docker.mirrors.sjtug.sjtu.edu.cn/"
       repository: openebs/jiva-operator
 
   jivaCSIPlugin:
     image:
-      registry: "docker.mirrors.sjtug.sjtu.edu.cn"
+      registry: "docker.mirrors.sjtug.sjtu.edu.cn/"
       repository: openebs/jiva-csi

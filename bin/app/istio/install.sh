@@ -60,7 +60,7 @@ if ! $(isHelmCharInstalled istio-ingress); then
   mkdir -p $CHARS/istio-ingress
 
   cat >$CHARS/istio-ingress/istio-ingress.helm.yaml <<EOF
-kind: DaemonSet
+kind: Deployment
 
 service:
   type: ClusterIP

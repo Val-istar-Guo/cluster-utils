@@ -21,6 +21,7 @@ meshConfig:
 
 global:
   proxy:
+    image: docker.mirrors.sjtug.sjtu.edu.cn/proxyv2
     # Resources for the sidecar.
     resources:
       requests:
@@ -29,3 +30,5 @@ global:
       limits:
         cpu: 200m
         memory: 256Mi
+  proxy_init:
+    image: docker.mirrors.sjtug.sjtu.edu.cn/proxyv2

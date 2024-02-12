@@ -2,8 +2,8 @@
 set -e
 
 kubectl apply \
-  -f ./pod.test.yaml \
-  -f ./pvc.test.yaml \
+  -f ./manifests/pod.test.yaml \
+  -f ./manifests/pvc.test.yaml \
   --wait
 
 kubectl exec -it test.openebs -- cat /mnt/openebs-csi/date.txt

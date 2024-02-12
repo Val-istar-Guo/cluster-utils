@@ -2,5 +2,5 @@
 set -e
 
 kubectl delete \
-  -f ./pod.test.yaml \
-  -f ./pvc.test.yaml
+  -f ./manifests/pod.test.yaml \
+  -f ./manifests/pvc.test.yaml

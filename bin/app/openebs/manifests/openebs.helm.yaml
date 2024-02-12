@@ -1,6 +1,3 @@
-# openebs-ndm:
-#   enabled: true
-
 # 配置文件参考 Helm 仓库说明
 # https://openebs.github.io/jiva-operator/
 jiva:

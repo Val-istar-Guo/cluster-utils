@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: test.openebs.pvc
+  name: test-openebs-pvc
 spec:
   storageClassName: jiva-sc
   accessModes:

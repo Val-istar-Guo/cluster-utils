@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: nginx-vsvc
+  namespace: test
+spec:
+  hosts:
+    - test.val-istar-guo.com
+  gateways:
+    - nginx-gateway
+  http:
+    - match:
+        - uri:
+            prefix: "/"
+      route:
+        - destination:
+            host: nginx-svc
+            port:
+              number: 8088

@@ -1,6 +1,8 @@
-openebs-ndm:
-  enabled: true
+# openebs-ndm:
+#   enabled: true
 
+# 配置文件参考 Helm 仓库说明
+# https://openebs.github.io/jiva-operator/
 jiva:
   enabled: true
   replicas: 1
@@ -11,31 +13,31 @@ jiva:
         registry: quay.mirrors.ustc.edu.cn/
     resizer:
       image:
-        registry: docker.io/
-        repository: longhornio/csi-resizer
+        registry: k8s.mirror.nju.edu.cn/
+        repository: k8scsi/csi-resizer
     attacher:
       image:
-        registry: docker.io/
-        repository: longhornio/csi-attacher
-        tag: v3.4.0-amd64
+        registry: k8s.mirror.nju.edu.cn/
+        repository: k8scsi/csi-attacher
+        # tag: v3.4.0-amd64
     provisioner:
       image:
-        registry: docker.io/
-        repository: longhornio/csi-provisioner
-        tag: v2.1.2-amd64
+        registry: k8s.mirror.nju.edu.cn/
+        repository: k8scsi/csi-provisioner
+        # tag: v2.1.2-amd64
     livenessprobe:
       image:
-        registry: docker.io/
-        repository: longhornio/livenessprobe
-        tag: v2.8.0-amd64
+        registry: k8s.mirror.nju.edu.cn/
+        repository: k8scsi/livenessprobe
+        # tag: v2.8.0-amd64
 
   csiNode:
     livenessprobe:
       image:
-        registry: docker.io/
-        repository: longhornio/livenessprobe
-        tag: v2.8.0-amd64
+        registry: k8s.mirror.nju.edu.cn/
+        repository: k8scsi/livenessprobe
+        # tag: v2.8.0-amd64
     driverRegistrar:
       image:
-        registry: docker.io/
-        repository: longhornio/csi-node-driver-registrar
+        registry: k8s.mirror.nju.edu.cn/
+        repository: k8scsi/csi-node-driver-registrar

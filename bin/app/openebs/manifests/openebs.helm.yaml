@@ -10,40 +10,39 @@ jiva:
   csiController:
     driverRegistrar:
       image:
-        registry: quay.mirrors.ustc.edu.cn/
+        registry: k8s.mirror.nju.edu.cn/
+        repository: sig-storage/csi-node-driver-registrar
+        tag: v2.10.0
     resizer:
       image:
-        # registry: k8s.mirror.nju.edu.cn/
-        registry: quay.mirrors.ustc.edu.cn/
-        repository: k8scsi/csi-resizer
+        registry: k8s.mirror.nju.edu.cn/
+        repository: sig-storage/csi-resizer
+        tag: v1.8.0
     attacher:
       image:
-        # registry: k8s.mirror.nju.edu.cn/
-        registry: quay.mirrors.ustc.edu.cn/
-        repository: k8scsi/csi-attacher
-        # tag: v3.4.0-amd64
+        registry: k8s.mirror.nju.edu.cn/
+        repository: sig-storage/csi-attacher
+        tag: v4.3.0
     provisioner:
       image:
-        # registry: k8s.mirror.nju.edu.cn/
-        registry: quay.mirrors.ustc.edu.cn/
-        repository: k8scsi/csi-provisioner
-        # tag: v2.1.2-amd64
+        registry: k8s.mirror.nju.edu.cn/
+        repository: sig-storage/csi-provisioner
+        tag: v3.6.3
+
     livenessprobe:
       image:
-        # registry: k8s.mirror.nju.edu.cn/
-        registry: quay.mirrors.ustc.edu.cn/
-        repository: k8scsi/livenessprobe
-        # tag: v2.8.0-amd64
+        registry: k8s.mirror.nju.edu.cn/
+        repository: sig-storage/livenessprobe
+        tag: v2.10.0
 
   csiNode:
     livenessprobe:
       image:
-        # registry: k8s.mirror.nju.edu.cn/
-        registry: quay.mirrors.ustc.edu.cn/
-        repository: k8scsi/livenessprobe
-        # tag: v2.8.0-amd64
+        registry: k8s.mirror.nju.edu.cn/
+        repository: sig-storage/livenessprobe
+        tag: v2.10.0
     driverRegistrar:
       image:
-        # registry: k8s.mirror.nju.edu.cn/
-        registry: quay.mirrors.ustc.edu.cn/
-        repository: k8scsi/csi-node-driver-registrar
+        registry: k8s.mirror.nju.edu.cn/
+        repository: sig-storage/csi-node-driver-registrar
+        tag: v2.10.0

@@ -13,31 +13,37 @@ jiva:
         registry: quay.mirrors.ustc.edu.cn/
     resizer:
       image:
-        registry: k8s.mirror.nju.edu.cn/
+        # registry: k8s.mirror.nju.edu.cn/
+        registry: quay.mirrors.ustc.edu.cn/
         repository: k8scsi/csi-resizer
     attacher:
       image:
-        registry: k8s.mirror.nju.edu.cn/
+        # registry: k8s.mirror.nju.edu.cn/
+        registry: quay.mirrors.ustc.edu.cn/
         repository: k8scsi/csi-attacher
         # tag: v3.4.0-amd64
     provisioner:
       image:
-        registry: k8s.mirror.nju.edu.cn/
+        # registry: k8s.mirror.nju.edu.cn/
+        registry: quay.mirrors.ustc.edu.cn/
         repository: k8scsi/csi-provisioner
         # tag: v2.1.2-amd64
     livenessprobe:
       image:
-        registry: k8s.mirror.nju.edu.cn/
+        # registry: k8s.mirror.nju.edu.cn/
+        registry: quay.mirrors.ustc.edu.cn/
         repository: k8scsi/livenessprobe
         # tag: v2.8.0-amd64
 
   csiNode:
     livenessprobe:
       image:
-        registry: k8s.mirror.nju.edu.cn/
+        # registry: k8s.mirror.nju.edu.cn/
+        registry: quay.mirrors.ustc.edu.cn/
         repository: k8scsi/livenessprobe
         # tag: v2.8.0-amd64
     driverRegistrar:
       image:
-        registry: k8s.mirror.nju.edu.cn/
+        # registry: k8s.mirror.nju.edu.cn/
+        registry: quay.mirrors.ustc.edu.cn/
         repository: k8scsi/csi-node-driver-registrar

@@ -6,4 +6,4 @@ kubectl apply \
   -f ./manifests/pvc.test.yaml \
   --wait
 
-kubectl exec -it test.openebs -- cat /mnt/openebs-csi/date.txt
+kubectl exec -it test-openebs -- cat /mnt/openebs-csi/date.txt

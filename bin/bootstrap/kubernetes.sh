@@ -33,6 +33,8 @@ swapoff -a
 #################################
 # 创建一个虚拟网卡
 # 由于阿里云/腾讯云的服务器并没有绑定公网IP的网卡
+# Debian12使用systemd-network管理网络
+# 与Debian11的networking配置方式不一样
 #################################
 if ! ip addr | grep -wq ${PUBLIC_IP}; then
   log '创建公网IP的虚拟网卡...'
@@ -61,12 +63,21 @@ ntpdate time.windows.com
 isServiceActive kubelet && log "kubernetes 已安装" && exit
 log '安装 kubernetes...'
 
-# 设置清华源
 mkdir -p /etc/apt/sources.list.d
-curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | apt-key add -
-cat >/etc/apt/sources.list.d/kubernetes.list <<EOF
-deb https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt/ kubernetes-xenial main
+# 连续两个tac避免 curl(23) Failed writing body 错误
+curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | tac | tac | apt-key add -
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
 EOF
+
+# 设置清华源
+# 清华源在国外无法使用可以更换为阿里源
+# 国外可用gpg
+# curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | tac | tac | apt-key add -
+# https://mirrors.tuna.tsinghua.edu.cn/help/kubernetes/
+# cat >/etc/apt/sources.list.d/kubernetes.list <<EOF
+# deb https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt/ kubernetes-xenial main
+# EOF
 
 # 安装
 apt-get update

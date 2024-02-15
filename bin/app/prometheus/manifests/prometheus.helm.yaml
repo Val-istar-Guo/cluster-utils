@@ -8,9 +8,8 @@ alertmanager:
   enabled: true
   alertmanagerSpec:
     image:
-      registry: docker.io
-      repository: bitnami/alertmanager
-      tag: 0.25.0-debian-11-r23
+      registry: quay.mirrors.ustc.edu.cn
+      # repository: prometheus/alertmanager
       portName: "9093"
     # storage:
     #   volumeClaimTemplate:
@@ -33,39 +32,38 @@ prometheusOperator:
     enabled: false
 
   image:
-    registry: docker.io
-    repository: bitnami/prometheus-operator
-    tag: 0.63.0-debian-11-r5
+    registry: quay.mirrors.ustc.edu.cn
+    # repository: prometheus-operator/prometheus-operator
 
-  prometheusDefaultBaseImageRegistry: docker.io
-  prometheusDefaultBaseImage: bitnami/prometheus
+  prometheusDefaultBaseImageRegistry: quay.mirrors.ustc.edu.cn
+  # prometheusDefaultBaseImage: bitnami/prometheus
 
-  alertmanagerDefaultBaseImageRegistry: docker.io
-  alertmanagerDefaultBaseImage: bitnami/alertmanager
+  alertmanagerDefaultBaseImageRegistry: quay.mirrors.ustc.edu.cn
+  # alertmanagerDefaultBaseImage: bitnami/alertmanager
 
   prometheusConfigReloader:
     image:
       registry: quay.mirrors.ustc.edu.cn
-      repository: prometheus-operator/prometheus-config-reloader
+      # repository: prometheus-operator/prometheus-config-reloader
 
   thanosImage:
-    registry: docker.io
-    repository: bitnami/thanos
+    registry: quay.mirrors.ustc.edu.cn
+    # registry: docker.io
+    # repository: bitnami/thanos
 
   admissionWebhooks:
     patch:
       image:
-        registry: docker.io
-        repository: dyrnq/kube-webhook-certgen
+        registry: k8s.mirror.nju.edu.cn
+        # repository: dyrnq/kube-webhook-certgen
 
 prometheus:
   enabled: true
   prometheusSpec:
     image:
-      registry: docker.io
-      repository: bitnami/prometheus
-      tag: 2.42.0-debian-11-r7
-    retention: 10d
+      registry: quay.mirrors.ustc.edu.cn/
+      repository: prometheus/alertmanager
+    retention: 30d
     storageSpec:
       volumeClaimTemplate:
         spec:
@@ -80,6 +78,7 @@ prometheus-node-exporter:
 
 kube-state-metrics:
   image:
-    registry: docker.io
-    repository: bitnami/kube-state-metrics
-    tag: 2.8.1-debian-11-r1
+    registry: k8s.mirror.nju.edu.cn
+    # registry: docker.io
+    # repository: bitnami/kube-state-metrics
+    # tag: 2.8.1-debian-11-r1

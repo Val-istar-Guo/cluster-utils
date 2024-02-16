@@ -62,7 +62,7 @@ prometheus:
   prometheusSpec:
     image:
       registry: quay.mirrors.ustc.edu.cn
-      repository: prometheus/alertmanager
+      # repository: prometheus/alertmanager
     retention: 14d
     storageSpec:
       volumeClaimTemplate:

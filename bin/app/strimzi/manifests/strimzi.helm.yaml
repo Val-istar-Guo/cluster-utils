@@ -1,0 +1,111 @@
+# 文档
+# https://artifacthub.io/packages/helm/strimzi/strimzi-kafka-operator
+
+createGlobalResources: true
+
+watchAnyNamespace: true
+
+defaultImageRegistry: quay.mirrors.ustc.edu.cn
+# image:
+#   registry: ""
+#   repository: ""
+#   name: operator
+#   tag: ""
+
+# dashboards:
+#   enabled: false
+#   namespace: ~
+#   label: grafana_dashboard # this is the default value from the grafana chart
+#   labelValue: "1" # this is the default value from the grafana chart
+#   annotations: {}
+#   extraLabels: {}
+
+# Docker images that operator uses to provision various components of Strimzi. To use your own registry prefix the
+# repository name with your registry URL.
+# Ex) repository: registry.xyzcorp.com/strimzi/kafka
+# kafka:
+#   image:
+#     registry: ""
+#     repository: ""
+#     name: kafka
+#     tagPrefix: ""
+# kafkaConnect:
+#   image:
+#     registry: ""
+#     repository: ""
+#     name: kafka
+#     tagPrefix: ""
+# topicOperator:
+#   image:
+#     registry: ""
+#     repository: ""
+#     name: operator
+#     tag: ""
+# userOperator:
+#   image:
+#     registry:
+#     repository:
+#     name: operator
+#     tag: ""
+# kafkaInit:
+#   image:
+#     registry: ""
+#     repository: ""
+#     name: operator
+#     tag: ""
+# tlsSidecarEntityOperator:
+#   image:
+#     registry: ""
+#     repository: ""
+#     name: kafka
+#     tagPrefix: ""
+# kafkaMirrorMaker:
+#   image:
+#     registry: ""
+#     repository: ""
+#     name: kafka
+#     tagPrefix: ""
+# kafkaBridge:
+#   image:
+#     registry: ""
+#     repository:
+#     name: kafka-bridge
+#     tag: 0.27.0
+# kafkaExporter:
+#   image:
+#     registry: ""
+#     repository: ""
+#     name: kafka
+#     tagPrefix: ""
+# kafkaMirrorMaker2:
+#   image:
+#     registry: ""
+#     repository: ""
+#     name: kafka
+#     tagPrefix: ""
+# cruiseControl:
+#   image:
+#     registry: ""
+#     repository: ""
+#     name: kafka
+#     tagPrefix: ""
+# kanikoExecutor:
+#   image:
+#     registry: ""
+#     repository: ""
+#     name: kaniko-executor
+#     tag: ""
+# mavenBuilder:
+#   image:
+#     registry: ""
+#     repository: ""
+#     name: maven-builder
+#     tag: ""
+
+# resources:
+#   limits:
+#     memory: 384Mi
+#     cpu: 1000m
+#   requests:
+#     memory: 384Mi
+#     cpu: 200m

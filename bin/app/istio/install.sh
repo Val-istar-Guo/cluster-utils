@@ -66,7 +66,23 @@ service:
   type: ClusterIP
   externalIPs:
     - $GATEWAY_IP
-
+  ports:
+    - name: status-ports
+      port: 15021
+      protocol: TCP
+      targetPort: 15021
+    - name: http2
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 443
+    - name: smtp
+      port: 25
+      protocol: TCP
+      targetPort: 25
 resources:
   requests:
     cpu: 100m

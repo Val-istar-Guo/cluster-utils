@@ -3,7 +3,7 @@
 jiva:
   enabled: true
   replicas: 1
-  image: "docker.mirrors.sjtug.sjtu.edu.cn/openebs/jiva"
+  image: "registry.dockermirror.com/openebs/jiva"
   defaultStoragePath: "/var/openebs"
   csiController:
     driverRegistrar:
@@ -48,17 +48,17 @@ jiva:
   jivaOperator:
     controller:
       image:
-        registry: "docker.mirrors.sjtug.sjtu.edu.cn/"
+        registry: "registry.dockermirror.com/"
         repository: openebs/jiva
     replica:
       image:
-        registry: "docker.mirrors.sjtug.sjtu.edu.cn/"
+        registry: "registry.dockermirror.com/"
         repository: openebs/jiva
     image:
-      registry: "docker.mirrors.sjtug.sjtu.edu.cn/"
+      registry: "registry.dockermirror.com/"
       repository: openebs/jiva-operator
 
   jivaCSIPlugin:
     image:
-      registry: "docker.mirrors.sjtug.sjtu.edu.cn/"
+      registry: "registry.dockermirror.com/"
       repository: openebs/jiva-csi

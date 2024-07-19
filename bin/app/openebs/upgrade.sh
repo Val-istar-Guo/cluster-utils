@@ -5,7 +5,7 @@ log "开始升级 openebs..."
 
 helm upgrade openebs openebs/openebs \
   --namespace openebs \
-  --values ./openebs.helm.yaml
+  --values ./manifests/openebs.helm.yaml
 
 [[ -n MANIFESTS ]] && cp ./openebs.helm.yaml $MANIFESTS/
 

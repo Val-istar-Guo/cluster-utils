@@ -110,5 +110,5 @@ EOF
   log "istio-ingress 部署完成"
 fi
 
-kubectl -f manifests/istio-ingress-class.yaml
+kubectl apply -f manifests/istio-ingress-class.yaml
 log "istio IngressClass 部署完成并被设定为默认 Ingress"
